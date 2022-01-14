@@ -6,7 +6,7 @@ function App() {
   return (
     <CounterProvider>
       <div>
-        hello welcome to the app
+        hello nicole
         <br />
         <br />
         <MyButton />
