@@ -14,7 +14,7 @@ export const GameContainer = () => {
     createEffect(() => {
         const allPlayers = ref(db, `/${id()}`);
 
-        get(ref(db, `/${id()}`)).then((snapshot) => {
+        onValue(allPlayers, (snapshot) => {
             if (snapshot.exists()) {
                 console.log(snapshot.val());
                 setPlayers(Object.keys(snapshot.val()))
