@@ -1,18 +1,16 @@
-import MyButton from './components/MyButtonLocal';
-import { CounterProvider } from './data/CounterProvider';
+import { GameContainer } from './components/GameContainer';
+import { GameIdProvider } from './data/gameId';
+import { PlayerPosProvider } from './data/PlayerPosProvider';
 
 function App() {
 
-  return (
-    <CounterProvider>
-      <div>
-        hello nicole
-        <br />
-        <br />
-        <MyButton />
-      </div>
-    </CounterProvider>
-  );
+
+  return (<GameIdProvider>
+    <PlayerPosProvider>
+      <GameContainer />
+    </PlayerPosProvider>
+  </GameIdProvider>)
+
 }
 
 export default App;
