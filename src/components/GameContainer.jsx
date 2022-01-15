@@ -6,6 +6,9 @@ import { IDForm } from "./IDForm"
 import OtherPlayer from "./OtherPlayer";
 import Player from "./Player";
 
+//TODO:
+// make it so every room uses a list of players instead of ids to x and y
+
 export const GameContainer = () => {
     const { id } = useGameId()
 

@@ -7,7 +7,6 @@ export const IDForm = () => {
     const { id, setId } = useGameId();
     const [text, setText] = createSignal('')
 
-
     return <>
         <input value={text()} onChange={({ target: { value } }) => setText(value)}></input>
 
