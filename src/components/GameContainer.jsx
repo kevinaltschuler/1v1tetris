@@ -1,4 +1,5 @@
 import { onValue, ref } from 'firebase/database';
+import { styled } from 'solid-styled-components';
 import { createEffect, createSignal, For } from 'solid-js';
 import { db } from '../data/firebase';
 import { useGameId } from '../data/gameId';
@@ -9,7 +10,13 @@ import Player from './Player.jsx';
 // TODO:
 // make it so every room uses a list of players instead of ids to x and y
 
-const GameContainer = () => {
+const GameBoard = styled('div')`
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+`;
+
+export const GameContainer = () => {
     const { id } = useGameId();
 
     const [players, setPlayers] = createSignal([]);
@@ -35,16 +42,15 @@ const GameContainer = () => {
         {
             id()
                 ? <div>
-
-                    <Player />
-                    <For each={players()}>
-                        {(player, _i) => <OtherPlayer id={player} />}
-                    </For>
-
+                    <GameBoard>
+                     hells
+                        <Player />
+                        <For each={players()}>
+                            {(player, _i) => <OtherPlayer id={player} />}
+                        </For>
+                    </GameBoard>
                 </div >
                 : <IDForm />
         }
     </>;
 };
-
-export default GameContainer;

@@ -22,6 +22,6 @@
                 "argsIgnorePattern": "^_"
             }
         ],
-        "import/prefer-default-export": "none"
+        "import/prefer-default-export": 0
     }
 }

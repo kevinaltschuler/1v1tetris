@@ -1,16 +1,16 @@
-import { GameContainer } from './components/GameContainer';
+import { GameContainer } from './components/GameContainer.jsx';
 import { GameIdProvider } from './data/gameId';
-import { PlayerPosProvider } from './data/PlayerPosProvider';
+import { PlayerPosProvider } from './data/PlayerPosProvider.jsx';
+
+console.log('hello');
 
 function App() {
-
-
-  return (<GameIdProvider>
-    <PlayerPosProvider>
-      <GameContainer />
-    </PlayerPosProvider>
-  </GameIdProvider>)
-
+    return (<GameIdProvider>
+  yo
+        <PlayerPosProvider>
+            <GameContainer />
+        </PlayerPosProvider>
+    </GameIdProvider>);
 }
 
 export default App;
