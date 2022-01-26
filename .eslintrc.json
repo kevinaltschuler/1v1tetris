@@ -4,7 +4,7 @@
         "es2021": true
     },
     "extends": [
-        "eslint:recommended",
+        "airbnb-base",
         "plugin:solid/recommended"
     ],
     "parserOptions": {
@@ -16,23 +16,12 @@
             "error",
             4
         ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
         "no-unused-vars": [
             "error",
             {
                 "argsIgnorePattern": "^_"
             }
-        ]
+        ],
+        "import/prefer-default-export": "none"
     }
 }

@@ -1,9 +1,8 @@
 import { createSignal } from 'solid-js';
 import { useGameId } from '../data/gameId';
 
-
 export const IDForm = () => {
-    const { id, setId } = useGameId();
+    const { setId } = useGameId();
     const [text, setText] = createSignal('');
 
     return <>

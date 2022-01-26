@@ -2,14 +2,14 @@ import { onValue, ref } from 'firebase/database';
 import { createEffect, createSignal, For } from 'solid-js';
 import { db } from '../data/firebase';
 import { useGameId } from '../data/gameId';
-import { IDForm } from './IDForm';
-import OtherPlayer from './OtherPlayer';
-import Player from './Player';
+import { IDForm } from './IDForm.jsx';
+import OtherPlayer from './OtherPlayer.jsx';
+import Player from './Player.jsx';
 
-//TODO:
+// TODO:
 // make it so every room uses a list of players instead of ids to x and y
 
-export const GameContainer = () => {
+const GameContainer = () => {
     const { id } = useGameId();
 
     const [players, setPlayers] = createSignal([]);
@@ -25,19 +25,26 @@ export const GameContainer = () => {
                 console.log('No data available');
             }
         });
+
         // onValue(allPlayers, (snapshot) => {
         //     console.log('', snapshot.val())
         // });
     });
 
-    return <>{id() ?
-        <div>
+    return <>
+        {
+            id()
+                ? <div>
 
-            <Player />
-            <For each={players()}>
-                {(player, _i) => <OtherPlayer id={player} />}
-            </For>
+                    <Player />
+                    <For each={players()}>
+                        {(player, _i) => <OtherPlayer id={player} />}
+                    </For>
 
-        </div >
-        : <IDForm />}</>;
+                </div >
+                : <IDForm />
+        }
+    </>;
 };
+
+export default GameContainer;
