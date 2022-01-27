@@ -8,7 +8,7 @@ export const GameIdContext = createContext();
 export const playerId = uuidv4();
 
 export function GameIdProvider(props) {
-    const [id, setId] = createSignal('poop');
+    const [id, setId] = createSignal('1');
 
     return (
         <GameIdContext.Provider value={{ id, setId }}>
