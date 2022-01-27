@@ -12,7 +12,7 @@ import Player from './Player.jsx';
 
 const GameBoard = styled('div')`
     width: 100px;
-    height: 100px;
+    height: 200px;
     border: 1px solid black;
 `;
 
@@ -43,7 +43,7 @@ export const GameContainer = () => {
             id()
                 ? <div>
                     <GameBoard>
-                     hells
+                     hello
                         <Player />
                         <For each={players()}>
                             {(player, _i) => <OtherPlayer id={player} />}

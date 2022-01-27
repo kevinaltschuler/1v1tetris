@@ -6,7 +6,6 @@ console.log('hello');
 
 function App() {
     return (<GameIdProvider>
-  yo
         <PlayerPosProvider>
             <GameContainer />
         </PlayerPosProvider>
